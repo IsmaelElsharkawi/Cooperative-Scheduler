@@ -1,0 +1,27 @@
+--cpu=Cortex-M4.fp.sp --branchpatch=sdcomp-29491-629360
+"distance\startup_stm32l432xx.o"
+"distance\main.o"
+"distance\stm32l4xx_it.o"
+"distance\stm32l4xx_hal_msp.o"
+"distance\stm32l4xx_hal_tim.o"
+"distance\stm32l4xx_hal_tim_ex.o"
+"distance\stm32l4xx_hal.o"
+"distance\stm32l4xx_hal_i2c.o"
+"distance\stm32l4xx_hal_i2c_ex.o"
+"distance\stm32l4xx_hal_rcc.o"
+"distance\stm32l4xx_hal_rcc_ex.o"
+"distance\stm32l4xx_hal_flash.o"
+"distance\stm32l4xx_hal_flash_ex.o"
+"distance\stm32l4xx_hal_flash_ramfunc.o"
+"distance\stm32l4xx_hal_gpio.o"
+"distance\stm32l4xx_hal_dma.o"
+"distance\stm32l4xx_hal_dma_ex.o"
+"distance\stm32l4xx_hal_pwr.o"
+"distance\stm32l4xx_hal_pwr_ex.o"
+"distance\stm32l4xx_hal_cortex.o"
+"distance\stm32l4xx_hal_exti.o"
+"distance\system_stm32l4xx.o"
+--library_type=microlib --strict --scatter "distance\distance.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "distance.map" -o distance\distance.axf
