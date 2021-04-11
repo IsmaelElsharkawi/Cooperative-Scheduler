@@ -4,10 +4,10 @@
 -------------------------------------------
 #### struct task
 This struct is used to represent the *tasks* that will get scheduled using the scheduler.\ 
-The attributes are: 
--pointer to the function
--pointer to the next task
--priority of the task
+The attributes are:\ 
+-pointer to the function\
+-pointer to the next task\
+-priority of the task\
 -delay associated with this task. (The delay is included in the task struct to be used in the delay queue and ReRunMe option).
 
 ####  struct queue
