@@ -36,3 +36,6 @@ distance\main.o: ..\..\distance\queue.h
 distance\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 distance\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 distance\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+distance\main.o: ..\..\distance\taskApp2.h
+distance\main.o: ..\..\distance\taskApp2.h
+distance\main.o: ../Core/Inc/stm32l4xx_it.h

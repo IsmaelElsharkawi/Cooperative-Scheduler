@@ -412,7 +412,7 @@
             <GroupArmAds>
               <Cads>
                 <interw>2</interw>
-                <Optim>0</Optim>
+                <Optim>1</Optim>
                 <oTime>2</oTime>
                 <SplitLS>2</SplitLS>
                 <OneElfS>2</OneElfS>
@@ -481,6 +481,11 @@
               <FileName>queue.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\queue.c</FilePath>
+            </File>
+            <File>
+              <FileName>taskApp2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\taskApp2.c</FilePath>
             </File>
           </Files>
         </Group>

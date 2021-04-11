@@ -4,6 +4,7 @@
 "distance\stm32l4xx_it.o"
 "distance\stm32l4xx_hal_msp.o"
 "distance\queue.o"
+"distance\taskapp2.o"
 "distance\stm32l4xx_hal_tim.o"
 "distance\stm32l4xx_hal_tim_ex.o"
 "distance\stm32l4xx_hal.o"

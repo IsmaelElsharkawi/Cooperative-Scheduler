@@ -65,6 +65,7 @@ extern int countSec;
 extern int Sysflag ;
 extern q * delay_queue;
 extern task_function * task_5_systick;
+long long current_time_stamp = 0;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -189,44 +190,47 @@ void PendSV_Handler(void)
 /**
   * @brief This function handles System tick timer.
   */
+
 void SysTick_Handler(void)
 {
-
   /* USER CODE BEGIN SysTick_IRQn 0 */
-	//QueTask(task_5_systick, 0);
-	
+	//__disable_irq();	
 	countMsec +=1;
-	if ((countMsec %100) == 0)
-	{
+	
+	//if ((countMsec %50) == 0)
+	//{
 		countMsec = 0; 
 		//Sysflag =1;
 			t * current_p;
-			t * deleted;
+			t * deleted;	
 		
     current_p = delay_queue->head_of_queue;
+
     while(current_p!=NULL){
         current_p->delay -= 1;
         if(current_p->delay<=0)
-					{
+				{
         	QueTask(current_p->f, current_p->priority);
         	delay_queue->head_of_queue = current_p->next_task;
 					deleted = current_p;
 					current_p = current_p->next_task;
 					free (deleted);
+					break;
         }
-					else 
-					{current_p = current_p->next_task;		}
+				else 
+				{
+					current_p = current_p->next_task;
+				}
+        
         
     }
-		//HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12,GPIO_PIN_RESET);
-	}
-		
+//		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12,GPIO_PIN_RESET);
+	//}
   /* USER CODE END SysTick_IRQn 0 */
-      HAL_IncTick();
-//  /* USER CODE BEGIN SysTick_IRQn 1 */
+  HAL_IncTick();
+  /* USER CODE BEGIN SysTick_IRQn 1 */
 
-//  /* USER CODE END SysTick_IRQn 1 */
-
+  /* USER CODE END SysTick_IRQn 1 */
 }
 
 /******************************************************************************/
