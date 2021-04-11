@@ -64,6 +64,11 @@ extern q * delay_queue;
 extern uint8_t reading_buffer[4];
 extern int volatile index_reading_buffer;
 extern int volatile threshold_exceeded_flag;
+extern int volatile threshold_temp_whole;
+extern int volatile threshold_temp_decimal;
+extern int volatile actual_temp_whole;
+extern int volatile actual_temp_decimal;
+
 //extern task_function task_3_set_threshold;
 /* USER CODE BEGIN EV */
 
@@ -189,24 +194,35 @@ void PendSV_Handler(void)
 /**
   * @brief This function handles System tick timer.
   */
+int counter =0;
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
-	QueTask(task_4_systick,0);
-		/*if(threshold_exceeded_flag==1){
-			if(flag==1){
-				flag =0;
-				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET);
-			}else{
-				flag =1;
-				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
-			}
+	
+	//QueTask(task_4_systick,0);
+	t * current_p;
+	t * deleted;
+	
+//	counter++;
+//	if(counter>=500){
+//		counter =0;
+//		if(threshold_exceeded_flag==1){
+//				if(flag==1){
+//					flag =0;
+//					HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET);
+//				}else{
+//					flag =1;
+//					HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
+//				}
+//			}else{
+//				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
+//			} 
+//	}
+	if(actual_temp_whole> threshold_temp_whole || (actual_temp_whole== threshold_temp_whole && actual_temp_decimal>threshold_temp_decimal)){
+			threshold_exceeded_flag=1;
 		}else{
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
-		} 
-	
-	
-		t * current_p;
+		threshold_exceeded_flag=0;
+	}
     current_p = delay_queue->head_of_queue;
 
     while(current_p!=NULL){
@@ -214,10 +230,16 @@ void SysTick_Handler(void)
         if(current_p->delay<=0){
         	QueTask(current_p->f, current_p->priority);
         	delay_queue->head_of_queue = current_p->next_task;
-        }
-        current_p = current_p->next_task;
+					deleted = current_p;
+					//current_p = current_p->next_task;
+					current_p = delay_queue->head_of_queue;
+					free(deleted);
+					break;
+        }else{
+					current_p = current_p->next_task;
+				}
         
-    }*/
+    }
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */

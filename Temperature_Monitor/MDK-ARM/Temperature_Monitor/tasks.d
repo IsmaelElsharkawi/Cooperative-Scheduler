@@ -1,5 +1,5 @@
-temperature_monitor\tasks.o: ..\..\tasks.c
-temperature_monitor\tasks.o: ..\..\tasks.h
+temperature_monitor\tasks.o: ..\tasks.c
+temperature_monitor\tasks.o: ..\tasks.h
 temperature_monitor\tasks.o: ../Core/Inc/main.h
 temperature_monitor\tasks.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h
 temperature_monitor\tasks.o: ../Core/Inc/stm32l4xx_hal_conf.h
@@ -32,10 +32,10 @@ temperature_monitor\tasks.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_p
 temperature_monitor\tasks.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h
 temperature_monitor\tasks.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h
 temperature_monitor\tasks.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h
-temperature_monitor\tasks.o: ..\..\queue.h
+temperature_monitor\tasks.o: ..\queue.h
 temperature_monitor\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 temperature_monitor\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 temperature_monitor\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 temperature_monitor\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-temperature_monitor\tasks.o: ..\..\tasks.h
+temperature_monitor\tasks.o: ..\tasks.h
 temperature_monitor\tasks.o: ../Core/Inc/stm32l4xx_it.h
