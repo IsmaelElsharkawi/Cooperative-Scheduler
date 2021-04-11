@@ -48,11 +48,11 @@ The user is prompted to enter a temperature, the temperature has to have two who
 
 ### Tasks in the Application
 
-#### Task 1
+- #### Task 1
 This tasks reads the temperature, it ReRunMe every 30 seconds.
-#### Task 2
+- #### Task 2
 This functions compares the temperature to the threshold and blinks the LED if the temperature is higher than the threshold
-#### Task 3
+- #### Task 3
 This function reads the input from the buffer that is filled by the UART Handler. The UART Handler keeps receiving letters, when the UART Handler recieves 5 letters, meaning that the threshold was taken from the user. This functions performs rigorous validation checks to make sure that the temperature entered is acceptable.  
 
 ### Demo Video 
@@ -74,6 +74,14 @@ The distance is measured every 2 ticks, and according to the measured distance t
 ### Tasks in the Application
 This application consists of two main tasks: 
 - #### Task 1
+This measures the distance using the ultrasonic sensor by calculating the time between the trig signal and the echo signal and then divide the time by 2 and multiply by the velocity to get the distance between the detected object and the sensor. \
+The task then call ReRunMe function with delay 2 ticks to measure the distance periodically every 2 ticks.
 
+- ### Task 2
+This task generate the buzz sound by setting an output GPIO pin to high then drop it back to low. This buzz sound is repeated using the *ReRunMe* of this task. *ReRunMe* takes delay as a parameter relative to how far is the object from the Ultrasonic sensor. 
 
 ### Demo Video 
+In this demo the wall represents the object and the Ultrasonic sensor is used to measure the distance between the wall & the sensor. \
+When the distance between the wall and the sensor decreases, the buzzer beeps more frequenlty. When the sensor is far from the wall, the time between the beeps decreases according to the distance between the object and the sensor. 
+
+Link to video: https://drive.google.com/file/d/1ghofU_KUOK_UoHgdAoAltKYysoxb0ShJ/view?usp=sharing
