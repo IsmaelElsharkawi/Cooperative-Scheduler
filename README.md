@@ -1,26 +1,34 @@
 # Cooperative-Scheduler
 
-**Cooperative-Scheduler main functions**
--------------------------------------------
-#### - void Dispatch() 
-This function is called in the main inside while (1) and it gets handles every clock unit. \
-This function dispatches task-by-task from the ready queue that are ready to execute. As the ready queue is always sorted according to the priority to run, dispatch fetch the first task in the ready queue and re-adjust the head pointer of the queue to point to the first task. \
-For dispactching the ready task, the schudler uses a global pointer of typedef task and makes it point to the dispatched task to get executed.
-
-#### - void init() 
-The main purpose of this function is to initialize the *ready queue* and the *delay queue* using malloc.
-
-#### - void QueTask(task_function * t_f, int prio)
-This function is used to queue the tasks in the *ready queue* according to the task's priority. It also responsible for keeping the *ready queue* always ready. The parameters for this function are: pointer to the task to be queued in the ready queue and task priority.
-
-
 **Cooperative-Scheduler Data Structures**
 -------------------------------------------
 #### - struct task
-This struct is used to represent the *tasks* that will get scheduled using the scheduler. The struct includes:  pointer to the next task, priority of the task and integer variable, and delay associated to this task. (The delay is included in the task struct to be used in the delay queue and ReRunMe option).
+This struct is used to represent the *tasks* that will get scheduled using the scheduler.\ 
+The attributes are: 
+-pointer to the function
+-pointer to the next task
+-priority of the task
+-delay associated with this task. (The delay is included in the task struct to be used in the delay queue and ReRunMe option).
 
 #### - struct queue
-This struct only contain a pointer to the head of the queue of type *task*.
+This struct only contain a pointer to the head of the queue of type *task*. There are only 2 queues in our applications, the ready_queue and the delay_queue. 
+
+**Cooperative-Scheduler main functions**
+-------------------------------------------
+#### void Dispatch() 
+This function is called in the main() function inside while (1) infinite loop. \
+This function dispatches task-by-task from the ready queue that are ready to execute. As the ready queue is always sorted according to the priority to run, dispatch fetches the first task in the ready queue(which has the highest priority) and re-adjusts the head pointer of the queue to point to the first task. \
+For dispactching the ready task, the scheduler dispatches from the ready_queue.
+
+#### void init() 
+The main purpose of this function is to initialize the *ready queue* and the *delay queue* using malloc.
+
+#### void QueTask(task_function * t_f, int prio)
+This function is used to queue the tasks in the *ready queue* according to the task's priority. It also responsible for keeping the *ready queue* always ready. The parameters for this function are: pointer to the task to be queued in the ready queue and task priority.
+
+#### void ReRunMe(int delay)
+This function is used to enque tasks into the *delay queue* and they are sorted according to the task's delay that was passed as a parameter. In the Systick Handler, when the delay expires, the task that was inserted into the *delay queue* gets inserted into the *ready_queue* according to the priority of the task. 
+
 
 
 **Application 1: Temperature Monitor**
@@ -46,6 +54,5 @@ This functions compares the temperature to the threshold and blinks the LED if t
 This function reads the input from the buffer that is filled by the UART Handler. The UART Handler keeps receiving letters, when the UART Handler recieves 5 letters, meaning that the threshold was taken from the user. This functions performs rigorous validation checks to make sure that the temperature entered is acceptable.  
 
 ### Demo Video 
-
-
-
+In this demo, the temperature is measured. First, the threshold is set to 10 degree Celsius to make sure that LED blinks, after that, the threshold is 
+Link to YouTube: https://drive.google.com/file/d/1yqYHBFoFnw5TClmqPVuCCKca3UBKhmye/view?usp=sharing
