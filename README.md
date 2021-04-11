@@ -33,7 +33,8 @@ The user is prompted to enter a temperature, the temperature has to have two who
 ![image](https://user-images.githubusercontent.com/61902007/114313989-25676780-9af9-11eb-9967-2185dd6d0a61.png)
 
 ### Picture of the circuit
-![Application_2](https://user-images.githubusercontent.com/61902007/114314503-46c95300-9afb-11eb-8e4d-f53dc0d9aa46.png)
+![Application_2_v2](https://user-images.githubusercontent.com/61902007/114316291-35844480-9b03-11eb-9716-40532f71e9a2.png)
+
 
 ### Tasks in the Application
 
