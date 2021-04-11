@@ -112,6 +112,11 @@ There were 4 stages for testing:
 
 #### 5.1 **Unit test for the Queue.c**
 This is the testing for the 4 functions(mentioned above) and the 2 data structures used. For testing the init() and the Dispatch(), no sperate tests for these would be needed since these would be implicitly tested in the testing of init() and Dispatch(). Dispatch cannot be tested unless there is already something in the ready_queue, and thus it is necessary to have the anything to Dispatch without having any tasks queued using QueTask. Also, the init() function can't be verified if it is working correclty unless tasks are executed correctly.
+##### 5.1.1 Testing QueTask()
+The first test was testing the init() QueTask() and Dispatching these tasks. In order to make it easy, for testing purposes, the task had a new string attribute and the Dispatch only printed this string attribute instead of executing the function. There is a file for this in the testing directory, there is a screenshot for the output of the program. 
+
+##### 5.1.2 Testing ReRunME()
+The second test was testing the ReRunMe using delay_queue. The systick was simulated and the queued tasks each tick were printed and when it was the turn for the execution of a task, it was executed. There is a file for this in the testing directory, there is a screenshot for the output of the program. 
 
 #### 5.2 **Unit test for the sensors**
 
