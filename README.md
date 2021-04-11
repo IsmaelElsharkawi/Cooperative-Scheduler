@@ -117,3 +117,9 @@ This is the testing for the 4 functions(mentioned above) and the 2 data structur
 
 #### 5.2.1 Testing the Temperature Sensor
 In this part we started by connecting the DS3231 to measure the temperature. We used the I2C to send
+
+### 5.3 **Integration Testing**
+The integration testing was integrating our .c files into the CUBEMX environment and running the code within microKeil. The first thing we tried was having simple tasks, where each tasks blinks the LED for a pre-determined number of times. For example, task 1 blinks 1 time, task 2 blinks 2 times, etc. We tried having ReRunMe instances withing tasks. The folder for testing this integration is named Testing_LEDs under the integration testing directory.
+
+### 5.4 **Application Testing**
+This is dicussed extensively in earlier sections and supported with videos for the implementations. 
