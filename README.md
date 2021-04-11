@@ -110,16 +110,16 @@ There were 4 stages for testing:
 - Integration testing
 - Application testing
 
-### 5.1 **Unit test for the Queue.c**
+#### 5.1 **Unit test for the Queue.c**
 This is the testing for the 4 functions(mentioned above) and the 2 data structures used. For testing the init() and the Dispatch(), no sperate tests for these would be needed since these would be implicitly tested in the testing of init() and Dispatch(). Dispatch cannot be tested unless there is already something in the ready_queue, and thus it is necessary to have the anything to Dispatch without having any tasks queued using QueTask. Also, the init() function can't be verified if it is working correclty unless tasks are executed correctly.
 
-### 5.2 **Unit test for the sensors**
+#### 5.2 **Unit test for the sensors**
 
-#### 5.2.1 Testing the Temperature Sensor
-In this part we started by connecting the DS3231 to measure the temperature. We used the I2C to send
+##### 5.2.1 Testing the Temperature Sensor
+In this part we started by connecting the DS3231 to measure the temperature. We used the I2C synchronous serial commuincation to commuincate between the sensor and the microcontroller. The I2C master is used to transmit to the  
 
-### 5.3 **Integration Testing**
+#### 5.3 **Integration Testing**
 The integration testing was integrating our .c files into the CUBEMX environment and running the code within microKeil. The first thing we tried was having simple tasks, where each tasks blinks the LED for a pre-determined number of times. For example, task 1 blinks 1 time, task 2 blinks 2 times, etc. We tried having ReRunMe instances withing tasks. The folder for testing this integration is named Testing_LEDs under the integration testing directory.
 
-### 5.4 **Application Testing**
+#### 5.4 **Application Testing**
 This is dicussed extensively in earlier sections and supported with videos for the implementations. 
