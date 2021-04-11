@@ -15,6 +15,10 @@ This struct only contain a pointer to the head of the queue of type *task*. Ther
 
 ![image](https://user-images.githubusercontent.com/61902007/114317881-98c5a500-9b0a-11eb-9e86-e75be2613e6a.png)
 
+<br />
+<br />
+
+
 **Cooperative-Scheduler main functions**
 -------------------------------------------
 #### void Dispatch() 
@@ -32,6 +36,8 @@ This function is used to queue the tasks in the *ready queue* according to the t
 This function is used to enque tasks into the *delay queue* and they are sorted according to the task's delay that was passed as a parameter. In the Systick Handler, when the delay expires, the task that was inserted into the *delay queue* gets inserted into the *ready_queue* according to the priority of the task. 
 
 
+<br />
+<br />
 
 **Application 1: Temperature Monitor**
 -------------------------------------------
@@ -60,7 +66,10 @@ In this demo, the temperature is measured. First, the threshold is set to 10 deg
 Link to YouTube: https://drive.google.com/file/d/1yqYHBFoFnw5TClmqPVuCCKca3UBKhmye/view?usp=sharing
 
 
-**Application : Parking Sensor**
+<br />
+<br />
+
+**Application 2 : Parking Sensor**
 -------------------------------------------
 
 ### Application Description
@@ -77,7 +86,7 @@ This application consists of two main tasks:
 This measures the distance using the ultrasonic sensor by calculating the time between the trig signal and the echo signal and then divide the time by 2 and multiply by the velocity to get the distance between the detected object and the sensor. \
 The task then call ReRunMe function with delay 2 ticks to measure the distance periodically every 2 ticks.
 
-- ### Task 2
+- #### Task 2
 This task generate the buzz sound by setting an output GPIO pin to high then drop it back to low. This buzz sound is repeated using the *ReRunMe* of this task. *ReRunMe* takes delay as a parameter relative to how far is the object from the Ultrasonic sensor. 
 
 ### Demo Video 
