@@ -43,7 +43,7 @@ This function is used to enque tasks into the *delay queue* and they are sorted 
 <br />
 <br />
 
-3- **Application 1: Temperature Monitor**
+3- **Application (1): Temperature Monitor**
 -------------------------------------------
 ### Application Description
 The purpose of this application is to have a system that continously monitors the temperature every 30 seconds.\
@@ -73,7 +73,7 @@ Link to YouTube: https://drive.google.com/file/d/1yqYHBFoFnw5TClmqPVuCCKca3UBKhm
 <br />
 <br />
 
-4- **Application 2 : Parking Sensor**
+4- **Application (2) : Parking Sensor**
 -------------------------------------------
 
 ### Application Description
@@ -110,5 +110,10 @@ There were 4 stages for testing:
 - Integration testing
 - Application testing
 
-### 5.1- **Unit testing for the Queue.c**
+### 5.1 **Unit test for the Queue.c**
 This is the testing for the 4 functions(mentioned above) and the 2 data structures used. For testing the init() and the Dispatch(), no sperate tests for these would be needed since these would be implicitly tested in the testing of init() and Dispatch(). Dispatch cannot be tested unless there is already something in the ready_queue, and thus it is necessary to have the anything to Dispatch without having any tasks queued using QueTask. Also, the init() function can't be verified if it is working correclty unless tasks are executed correctly.
+
+### 5.2 **Unit test for the sensors**
+
+#### 5.2.1 Testing the Temperature Sensor
+In this part we started by connecting the DS3231 to measure the temperature. We used the I2C to send
