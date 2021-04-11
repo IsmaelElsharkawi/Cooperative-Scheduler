@@ -17,4 +17,10 @@ This struct is used to represent the *tasks* that will get scheduled using the s
 This struct only contain a pointer to the head of the queue of type *task*.
 
 #### - void QueTask(task_function * t_f, int prio)
-This function is used to queue the tasks in the *ready queue* according to the task's priority. It also responsible for keeping the *ready queue* always ready. The parameters for this function are: pointer to the task to be queued in the ready queue and task priority.
+This function is used to queue the tasks in the *ready queue* according to the task's priority. It also responsible for keeping the *ready queue* always ready. The parameters for this function are: pointer to the task to be queued in the ready queue and task priority. \
+This function starts by checking if the inserted task is the first task in the ready queue and if so assign it to the head of the queue. \
+Tasks get inserted in the ready queue by comparing the priority of the other tasks in the queue to insert it in the right position and keep the queue sorted all the time. \
+** If two tasks have the same priority the ready queue sort them according to the rule of first come first serve. 
+
+
+#### - void ReRunMe(int delay)
