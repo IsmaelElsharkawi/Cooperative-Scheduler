@@ -54,5 +54,5 @@ This functions compares the temperature to the threshold and blinks the LED if t
 This function reads the input from the buffer that is filled by the UART Handler. The UART Handler keeps receiving letters, when the UART Handler recieves 5 letters, meaning that the threshold was taken from the user. This functions performs rigorous validation checks to make sure that the temperature entered is acceptable.  
 
 ### Demo Video 
-In this demo, the temperature is measured. First, the threshold is set to 10 degree Celsius to make sure that LED blinks, after that, the threshold is 
+In this demo, the temperature is measured. First, the threshold is set to 10 degree Celsius to make sure that LED blinks, after that, the threshold is set to 25.50 to make sure that the actual measured temperature is below the threshold, so the LED stops blinking. Other methods for testing could include having a lighter to increase the surrouding temperature so that it passes the threshold.\
 Link to YouTube: https://drive.google.com/file/d/1yqYHBFoFnw5TClmqPVuCCKca3UBKhmye/view?usp=sharing
