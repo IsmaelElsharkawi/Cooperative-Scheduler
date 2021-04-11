@@ -10,17 +10,41 @@ For dispactching the ready task, the schudler uses a global pointer of typedef t
 #### - void init() 
 The main purpose of this function is to initialize the *ready queue* and the *delay queue* using malloc.
 
+#### - void QueTask(task_function * t_f, int prio)
+This function is used to queue the tasks in the *ready queue* according to the task's priority. It also responsible for keeping the *ready queue* always ready. The parameters for this function are: pointer to the task to be queued in the ready queue and task priority.
+
+
+**Cooperative-Scheduler Data Structures**
+-------------------------------------------
 #### - struct task
 This struct is used to represent the *tasks* that will get scheduled using the scheduler. The struct includes:  pointer to the next task, priority of the task and integer variable, and delay associated to this task. (The delay is included in the task struct to be used in the delay queue and ReRunMe option).
 
 #### - struct queue
 This struct only contain a pointer to the head of the queue of type *task*.
 
-#### - void QueTask(task_function * t_f, int prio)
-This function is used to queue the tasks in the *ready queue* according to the task's priority. It also responsible for keeping the *ready queue* always ready. The parameters for this function are: pointer to the task to be queued in the ready queue and task priority. \
-This function starts by checking if the inserted task is the first task in the ready queue and if so assign it to the head of the queue. \
-Tasks get inserted in the ready queue by comparing the priority of the other tasks in the queue to insert it in the right position and keep the queue sorted all the time. \
-** If two tasks have the same priority the ready queue sort them according to the rule of first come first serve. 
+
+**Application 1: Temperature Monitor**
+-------------------------------------------
+### Application Description
+The purpose of this application is to have a system that continously monitors the temperature every 30 seconds.\
+The user is prompted to enter a temperature, the temperature has to have two whole numbers and two decimal places, a validation check is performed to check if the user input is in the correct format. The user can change the threshold at any point in time. If the temperature measured by the sensor is higher than the set threshold, a LED light starts blinking. 
+
+### Validation Checks Screenshots
+![image](https://user-images.githubusercontent.com/61902007/114313989-25676780-9af9-11eb-9967-2185dd6d0a61.png)
+
+### Picture of the circuit
+![Application_2](https://user-images.githubusercontent.com/61902007/114314503-46c95300-9afb-11eb-8e4d-f53dc0d9aa46.png)
+
+### Tasks in the Application
+
+#### Task 1
+This tasks reads the temperature, it ReRunMe every 30 seconds.
+#### Task 2
+This functions compares the temperature to the threshold and blinks the LED if the temperature is higher than the threshold
+#### Task 3
+This function reads the input from the buffer that is filled by the UART Handler. The UART Handler keeps receiving letters, when the UART Handler recieves 5 letters, meaning that the threshold was taken from the user. This functions performs rigorous validation checks to make sure that the temperature entered is acceptable.  
+
+### Demo Video 
 
 
-#### - void ReRunMe(int delay)
+
