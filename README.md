@@ -10,8 +10,10 @@ The attributes are:
 -priority of the task
 -delay associated with this task. (The delay is included in the task struct to be used in the delay queue and ReRunMe option).
 
-#### struct queue
-This struct only contain a pointer to the head of the queue of type *task*. There are only 2 queues in our applications, the ready_queue and the delay_queue. 
+####  struct queue
+This struct only contain a pointer to the head of the queue of type *task*. There are only 2 queues in our applications, the ready_queue and the delay_queue. Tasks are created dynamically, i.e. there is no preset value for the number of tasks. If the head_of_queue is NULL, then there are no tasks to run. This is an example for how the *read_queue* is laid out in memory. 
+
+![image](https://user-images.githubusercontent.com/61902007/114317881-98c5a500-9b0a-11eb-9e86-e75be2613e6a.png)
 
 **Cooperative-Scheduler main functions**
 -------------------------------------------
