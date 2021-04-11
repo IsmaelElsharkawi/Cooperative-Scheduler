@@ -1,5 +1,9 @@
 # Cooperative-Scheduler
 
+**Description**
+-------------------------------------------
+This scheduler runs tasks according to their priorities. The priorities are between 0 and 7. The highest priority task runs first. There is an option for delaying a task from running for a specified number of ticks. This scheduler does not support a task pre-empting another task. 
+
 1-  **Cooperative-Scheduler Data Structures**
 -------------------------------------------
 #### struct task
@@ -94,3 +98,17 @@ In this demo the wall represents the object and the Ultrasonic sensor is used to
 When the distance between the wall and the sensor decreases, the buzzer beeps more frequenlty. When the sensor is far from the wall, the time between the beeps decreases according to the distance between the object and the sensor. 
 
 Link to video: https://drive.google.com/file/d/1ghofU_KUOK_UoHgdAoAltKYysoxb0ShJ/view?usp=sharing
+
+<br />
+<br />
+
+5- **Testing**
+-------------------------------------------
+There were 4 stages for testing:
+- Unit testing for the Queue.c file which has the logic for the scheduler
+- Sensor testing
+- Integration testing
+- Application testing
+
+### 5.1- **Unit testing for the Queue.c**
+This is the testing for the 4 functions(mentioned above) and the 2 data structures used. For testing the init() and the Dispatch(), no sperate tests for these would be needed since these would be implicitly tested in the testing of init() and Dispatch(). Dispatch cannot be tested unless there is already something in the ready_queue, and thus it is necessary to have the anything to Dispatch without having any tasks queued using QueTask. Also, the init() function can't be verified if it is working correclty unless tasks are executed correctly.
