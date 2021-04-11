@@ -2,7 +2,7 @@
 
 **Cooperative-Scheduler Data Structures**
 -------------------------------------------
-#### - struct task
+####  struct task
 This struct is used to represent the *tasks* that will get scheduled using the scheduler.\ 
 The attributes are: 
 -pointer to the function
@@ -10,15 +10,17 @@ The attributes are:
 -priority of the task
 -delay associated with this task. (The delay is included in the task struct to be used in the delay queue and ReRunMe option).
 
-#### - struct queue
-This struct only contain a pointer to the head of the queue of type *task*. There are only 2 queues in our applications, the ready_queue and the delay_queue. 
+####  struct queue
+This struct only contain a pointer to the head of the queue of type *task*. There are only 2 queues in our applications, the ready_queue and the delay_queue. Tasks are created dynamically, i.e. there is no preset value for the number of tasks. If the head_of_queue is NULL, then there are no tasks to run. This is an example for how the *read_queue* is laid out in memory. 
+
+![image](https://user-images.githubusercontent.com/61902007/114317881-98c5a500-9b0a-11eb-9e86-e75be2613e6a.png)
 
 **Cooperative-Scheduler main functions**
 -------------------------------------------
 #### void Dispatch() 
 This function is called in the main() function inside while (1) infinite loop. \
 This function dispatches task-by-task from the ready queue that are ready to execute. As the ready queue is always sorted according to the priority to run, dispatch fetches the first task in the ready queue(which has the highest priority) and re-adjusts the head pointer of the queue to point to the first task. \
-For dispactching the ready task, the scheduler dispatches from the ready_queue.
+For dispactching the ready task, the scheduler dispatches from the ready_queue. 
 
 #### void init() 
 The main purpose of this function is to initialize the *ready queue* and the *delay queue* using malloc.
@@ -28,8 +30,6 @@ This function is used to queue the tasks in the *ready queue* according to the t
 
 #### void ReRunMe(int delay)
 This function is used to enque tasks into the *delay queue* and they are sorted according to the task's delay that was passed as a parameter. In the Systick Handler, when the delay expires, the task that was inserted into the *delay queue* gets inserted into the *ready_queue* according to the priority of the task. 
-
-
 
 **Application 1: Temperature Monitor**
 -------------------------------------------
