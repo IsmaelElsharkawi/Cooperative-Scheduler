@@ -5,6 +5,7 @@ q * ready_queue;   /*Global definition for both queues used, there is an implici
 q * delay_queue;
 t * current_running_task;
 
+extern long long current_time_stamp;
 int volatile current_running_task_p;
 int volatile current_running_task_d;
 task_function * volatile current_running_task_f;
@@ -12,7 +13,9 @@ task_function * volatile current_running_task_f;
 void init(void){
 	/*IMPORTANT: if any new data structures are created, they must be initialized here*/
 	ready_queue = (q*)malloc(sizeof(q));
+	ready_queue->head_of_queue=0;
 	delay_queue = (q*)malloc(sizeof(q));
+	delay_queue->head_of_queue=0;
 }
 
 void Dispatch(void){
@@ -22,25 +25,25 @@ void Dispatch(void){
 	current_running_task_p = current_running_task->priority;
 	current_running_task_d = current_running_task->delay;
 	current_running_task_f = current_running_task->f;
-
-	ready_queue->head_of_queue->f();
 	ready_queue->head_of_queue = ready_queue->head_of_queue->next_task;
+	current_running_task->f();
+	
 	free(current_running_task);
 }
 
 
 
 void ReRunMe(int delay){
-	bool delay_flag = false;
-	t * current_task;
-	t * last_task;
-	t * new_task;
+	bool volatile delay_flag = false;
+	struct task * current_task;
+	struct task * last_task;
+	struct task * new_task;
 	
 	new_task = (t*)malloc(sizeof(t));
 	new_task->f = current_running_task_f;
 	new_task->priority = current_running_task_p;
-	new_task->delay = delay;
-
+	new_task->delay = delay + current_time_stamp;
+	new_task->next_task=NULL;
 	if(delay==0){ 
 		QueTask(current_running_task_f, current_running_task_p);
 		return;
@@ -50,14 +53,14 @@ void ReRunMe(int delay){
 		delay_queue->head_of_queue = new_task;
 		new_task->next_task = NULL;
 	    }else{
-		if(delay_queue->head_of_queue->delay > delay){ /*special case: the case of having a priority higher than the head of the queue*/
+		if(delay_queue->head_of_queue->delay > delay + current_time_stamp){ /*special case: the case of having a priority higher than the head of the queue*/
 		    new_task->next_task = delay_queue->head_of_queue;
 		    delay_queue->head_of_queue = new_task;
 		}else{
 		    
 		    current_task = delay_queue->head_of_queue;
 		    while(delay_flag == false && current_task!=NULL){
-		        if(current_task->delay > delay){
+		        if(current_task->delay > delay + current_time_stamp){
 		            delay_flag = true;
 		            new_task->next_task = current_task;
 		            last_task->next_task = new_task;
@@ -82,10 +85,10 @@ void QueTask(task_function * t_f, /*pointer to the function*/    /*IMPORTANT: Th
             //char * string_new, 
              int prio /*priority of the task entered into the queue*/)
 {   
-    bool priority_flag = false;
-    t * current_task;
-    t * last_task; 
-    t * new_task;
+    bool volatile priority_flag = false;
+    struct task * current_task;
+    struct task * last_task; 
+    struct task * new_task;
 	
     new_task = (t*)malloc(sizeof(t));
     //new_task->string = string_new;

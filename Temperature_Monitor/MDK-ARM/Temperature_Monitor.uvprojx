@@ -412,11 +412,11 @@
             <GroupArmAds>
               <Cads>
                 <interw>2</interw>
-                <Optim>0</Optim>
-                <oTime>2</oTime>
+                <Optim>1</Optim>
+                <oTime>0</oTime>
                 <SplitLS>2</SplitLS>
                 <OneElfS>2</OneElfS>
-                <Strict>2</Strict>
+                <Strict>0</Strict>
                 <EnumInt>2</EnumInt>
                 <PlainCh>2</PlainCh>
                 <Ropi>2</Ropi>
@@ -424,7 +424,7 @@
                 <wLevel>0</wLevel>
                 <uThumb>2</uThumb>
                 <uSurpInc>2</uSurpInc>
-                <uC99>2</uC99>
+                <uC99>0</uC99>
                 <uGnu>2</uGnu>
                 <useXO>2</useXO>
                 <v6Lang>0</v6Lang>
@@ -438,7 +438,7 @@
                   <MiscControls></MiscControls>
                   <Define></Define>
                   <Undefine></Undefine>
-                  <IncludePath>..\..\..\Embedded Project</IncludePath>
+                  <IncludePath>..\..\Temperature_Monitor</IncludePath>
                 </VariousControls>
               </Cads>
               <Aads>
@@ -463,16 +463,6 @@
           </GroupOption>
           <Files>
             <File>
-              <FileName>queue.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\queue.c</FilePath>
-            </File>
-            <File>
-              <FileName>tasks.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\tasks.c</FilePath>
-            </File>
-            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/main.c</FilePath>
@@ -486,6 +476,16 @@
               <FileName>stm32l4xx_hal_msp.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32l4xx_hal_msp.c</FilePath>
+            </File>
+            <File>
+              <FileName>tasks.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\tasks.c</FilePath>
+            </File>
+            <File>
+              <FileName>queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\queue.c</FilePath>
             </File>
           </Files>
         </Group>

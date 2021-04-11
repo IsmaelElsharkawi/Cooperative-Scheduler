@@ -31,11 +31,11 @@ temperature_monitor\stm32l4xx_it.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4x
 temperature_monitor\stm32l4xx_it.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h
 temperature_monitor\stm32l4xx_it.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h
 temperature_monitor\stm32l4xx_it.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h
-temperature_monitor\stm32l4xx_it.o: ..\..\..\Embedded Project\queue.h
+temperature_monitor\stm32l4xx_it.o: ..\..\Temperature_Monitor\queue.h
 temperature_monitor\stm32l4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 temperature_monitor\stm32l4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 temperature_monitor\stm32l4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 temperature_monitor\stm32l4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-temperature_monitor\stm32l4xx_it.o: ..\..\..\Embedded Project\tasks.h
-temperature_monitor\stm32l4xx_it.o: ..\..\..\Embedded Project\tasks.h
+temperature_monitor\stm32l4xx_it.o: ..\..\Temperature_Monitor\tasks.h
+temperature_monitor\stm32l4xx_it.o: ..\..\Temperature_Monitor\tasks.h
 temperature_monitor\stm32l4xx_it.o: ../Core/Inc/stm32l4xx_it.h

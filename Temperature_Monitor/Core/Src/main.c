@@ -117,9 +117,9 @@ int main(void)
 	init();
 	HAL_UART_Transmit(&huart1,welcome_text, sizeof(welcome_text), HAL_MAX_DELAY);
 	QueTask(task_1_read_temperature, 2);
-	
+	QueTask(task_2_blink_leds, 7);
   /* USER CODE END 2 */
-
+   
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -195,7 +195,7 @@ void SystemClock_Config(void)
   HAL_RCCEx_EnableMSIPLLMode();
 	
 	
-	 HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()*0.05); //0.05 represets 1 tick (50ms)
+	 HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()*20); 
 /**Configure the Systick
     */
   HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);

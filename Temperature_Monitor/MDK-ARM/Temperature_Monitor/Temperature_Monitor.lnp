@@ -1,10 +1,10 @@
 --cpu=Cortex-M4.fp.sp --branchpatch=sdcomp-29491-629360
 "temperature_monitor\startup_stm32l432xx.o"
-"temperature_monitor\queue.o"
-"temperature_monitor\tasks.o"
 "temperature_monitor\main.o"
 "temperature_monitor\stm32l4xx_it.o"
 "temperature_monitor\stm32l4xx_hal_msp.o"
+"temperature_monitor\tasks.o"
+"temperature_monitor\queue.o"
 "temperature_monitor\stm32l4xx_hal_i2c.o"
 "temperature_monitor\stm32l4xx_hal_i2c_ex.o"
 "temperature_monitor\stm32l4xx_hal.o"

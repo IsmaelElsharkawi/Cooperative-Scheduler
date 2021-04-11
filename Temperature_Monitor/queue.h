@@ -20,7 +20,7 @@ typedef struct task
     //char * string;
     t * next_task;  /*points to the next task in the queue*/
     int priority;   //implementations of checks for the priority
-    int delay;      //only implemented in the case of the delay_queue
+    long long delay;      //only implemented in the case of the delay_queue
 }t;
 
 

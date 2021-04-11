@@ -45,6 +45,7 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 int volatile flag =0;
+long long current_time_stamp = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -64,6 +65,11 @@ extern q * delay_queue;
 extern uint8_t reading_buffer[4];
 extern int volatile index_reading_buffer;
 extern int volatile threshold_exceeded_flag;
+extern int volatile threshold_temp_whole;
+extern int volatile threshold_temp_decimal;
+extern int volatile actual_temp_whole;
+extern int volatile actual_temp_decimal;
+
 //extern task_function task_3_set_threshold;
 /* USER CODE BEGIN EV */
 
@@ -189,35 +195,60 @@ void PendSV_Handler(void)
 /**
   * @brief This function handles System tick timer.
   */
+int counter =0;
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
-	QueTask(task_4_systick,0);
-		/*if(threshold_exceeded_flag==1){
-			if(flag==1){
-				flag =0;
-				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET);
-			}else{
-				flag =1;
-				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
-			}
-		}else{
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
-		} 
 	
+	//QueTask(task_4_systick,0);
+	t * current_p;
+	t * deleted;
 	
-		t * current_p;
-    current_p = delay_queue->head_of_queue;
-
-    while(current_p!=NULL){
-        current_p->delay -= 1;
-        if(current_p->delay<=0){
-        	QueTask(current_p->f, current_p->priority);
-        	delay_queue->head_of_queue = current_p->next_task;
-        }
-        current_p = current_p->next_task;
-        
-    }*/
+//	counter++;
+//	if(counter>=500){
+//		counter =0;
+//		if(threshold_exceeded_flag==1){
+//				if(flag==1){
+//					flag =0;
+//					HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET);
+//				}else{
+//					flag =1;
+//					HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
+//				}
+//			}else{
+//				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
+//			} 
+//	}
+	current_time_stamp ++;
+//	current_time_stamp%=1000000000000000000;
+//	if(actual_temp_whole> threshold_temp_whole || (actual_temp_whole== threshold_temp_whole && actual_temp_decimal>threshold_temp_decimal)){
+//			threshold_exceeded_flag=1;
+//		}else{
+//		threshold_exceeded_flag=0;
+//	}
+//    current_p = delay_queue->head_of_queue;
+		if(current_time_stamp == delay_queue->head_of_queue->delay){
+					deleted = delay_queue->head_of_queue;
+					QueTask(delay_queue->head_of_queue->f, delay_queue->head_of_queue->priority);
+        	delay_queue->head_of_queue = delay_queue->head_of_queue->next_task;
+					//current_p = current_p->next_task;
+					free(deleted);
+		}
+//    while(current_p!=NULL){
+//        current_p->delay -= 1;
+//        if(current_p->delay<=0){
+//        	QueTask(current_p->f, current_p->priority);
+//        	delay_queue->head_of_queue = current_p->next_task;
+//					deleted = current_p;
+//					//current_p = current_p->next_task;
+//					current_p = delay_queue->head_of_queue;
+//					free(deleted);
+//					break;
+//        }else{
+//					current_p = current_p->next_task;
+//				}
+//        
+//    }
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
