@@ -5,10 +5,10 @@
 #### struct task
 This struct is used to represent the *tasks* that will get scheduled using the scheduler.\ 
 The attributes are:\ 
--pointer to the function\
--pointer to the next task\
--priority of the task\
--delay associated with this task. (The delay is included in the task struct to be used in the delay queue and ReRunMe option).
+- pointer to the function\
+- pointer to the next task\
+- priority of the task\
+- delay associated with this task. (The delay is included in the task struct to be used in the delay queue and ReRunMe option).
 
 ####  struct queue
 This struct only contain a pointer to the head of the queue of type *task*. There are only 2 queues in our applications, the ready_queue and the delay_queue. Tasks are created dynamically, i.e. there is no preset value for the number of tasks. If the head_of_queue is NULL, then there are no tasks to run. This is an example for how the *read_queue* is laid out in memory. 
