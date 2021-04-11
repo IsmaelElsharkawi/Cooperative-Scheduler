@@ -121,7 +121,10 @@ The second test was testing the ReRunMe using delay_queue. The systick was simul
 #### 5.2 **Unit test for the sensors**
 
 ##### 5.2.1 Testing the Temperature Sensor
-In this part we started by connecting the DS3231 to measure the temperature. We used the I2C synchronous serial commuincation to commuincate between the sensor and the microcontroller. The I2C master is used to transmit to the  
+In this part we started by connecting the DS3231 to measure the temperature. We used the I2C synchronous serial commuincation to commuincate between the sensor and the microcontroller. The I2C master is used to transmit to the register in the sensor responsible for detecting the temperature. There are two registers, one for getting the most significant bit of the temp reading and the other for getting the other for the least significant bit.
+
+##### 5.2.2 Testing the Ultrasonic Sensor
+In this part we tested the ultrasonic sensor using the debug mode in Keil to get the distance.
 
 #### 5.3 **Integration Testing**
 The integration testing was integrating our .c files into the CUBEMX environment and running the code within microKeil. The first thing we tried was having simple tasks, where each tasks blinks the LED for a pre-determined number of times. For example, task 1 blinks 1 time, task 2 blinks 2 times, etc. We tried having ReRunMe instances withing tasks. The folder for testing this integration is named Testing_LEDs under the integration testing directory.
