@@ -76,8 +76,13 @@ void task_2_blink_leds(void){
 //		for(i=0;i<5000000;i++){}
 		//counter_Led_blinking++;	
 		//if(threshold_exceeded_flag==1 /*&& counter_Led_blinking<=10*/) ReRunMe(5);
-	
-	if(threshold_exceeded_flag==1){
+//if(actual_temp_whole> threshold_temp_whole || (actual_temp_whole== threshold_temp_whole && actual_temp_decimal>threshold_temp_decimal)){
+//		threshold_exceeded_flag=1;
+//	}else{
+//		threshold_exceeded_flag=0;
+//}
+    
+	if(actual_temp_whole> threshold_temp_whole || (actual_temp_whole== threshold_temp_whole && actual_temp_decimal>threshold_temp_decimal)){
 				if(flag==1){
 					flag =0;
 					HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET);

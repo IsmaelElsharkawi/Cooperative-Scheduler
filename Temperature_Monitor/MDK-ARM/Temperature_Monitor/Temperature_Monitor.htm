@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Temperature_Monitor\Temperature_Monitor.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Temperature_Monitor\Temperature_Monitor.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Apr 11 18:00:51 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Apr 11 18:47:49 2021
 <BR><P>
 <H3>Maximum Stack Usage =        248 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -693,7 +693,7 @@ Global Symbols
 <P><STRONG><a name="[8]"></a>PendSV_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32l4xx_it.o(i.PendSV_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32l432xx.o(RESET)
 </UL>
-<P><STRONG><a name="[8a]"></a>QueTask</STRONG> (Thumb, 130 bytes, Stack size 32 bytes, queue.o(i.QueTask))
+<P><STRONG><a name="[8a]"></a>QueTask</STRONG> (Thumb, 132 bytes, Stack size 32 bytes, queue.o(i.QueTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = QueTask &rArr; malloc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
@@ -707,7 +707,7 @@ Global Symbols
 <P><STRONG><a name="[f]"></a>RCC_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32l4xx_it.o(i.RCC_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32l432xx.o(RESET)
 </UL>
-<P><STRONG><a name="[8d]"></a>ReRunMe</STRONG> (Thumb, 148 bytes, Stack size 24 bytes, queue.o(i.ReRunMe))
+<P><STRONG><a name="[8d]"></a>ReRunMe</STRONG> (Thumb, 190 bytes, Stack size 24 bytes, queue.o(i.ReRunMe))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = ReRunMe &rArr; QueTask &rArr; malloc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QueTask
@@ -720,8 +720,8 @@ Global Symbols
 <P><STRONG><a name="[6]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32l4xx_it.o(i.SVC_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32l432xx.o(RESET)
 </UL>
-<P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 118 bytes, Stack size 16 bytes, stm32l4xx_it.o(i.SysTick_Handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = SysTick_Handler &rArr; QueTask &rArr; malloc
+<P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 96 bytes, Stack size 8 bytes, stm32l4xx_it.o(i.SysTick_Handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = SysTick_Handler &rArr; QueTask &rArr; malloc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QueTask
@@ -850,7 +850,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
 </UL>
-<P><STRONG><a name="[4c]"></a>task_2_blink_leds</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, tasks.o(i.task_2_blink_leds))
+<P><STRONG><a name="[4c]"></a>task_2_blink_leds</STRONG> (Thumb, 102 bytes, Stack size 8 bytes, tasks.o(i.task_2_blink_leds))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = task_2_blink_leds &rArr; ReRunMe &rArr; QueTask &rArr; malloc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReRunMe

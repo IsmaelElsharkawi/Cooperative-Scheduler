@@ -154,7 +154,7 @@
           <Type>0</Type>
           <LineNumber>67</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134228644</Address>
+          <Address>134228100</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -168,18 +168,18 @@
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>80</LineNumber>
+          <LineNumber>222</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134228682</Address>
+          <Address>134226070</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\tasks.c</Filename>
+          <Filename>../Core/Src/stm32l4xx_it.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\Temperature_Monitor\../tasks.c\80</Expression>
+          <Expression>\\Temperature_Monitor\../Core/Src/stm32l4xx_it.c\222</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -223,6 +223,16 @@
           <WinNumber>1</WinNumber>
           <ItemText>current_task,0x0A</ItemText>
         </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>ready_queue</ItemText>
+        </Ww>
+        <Ww>
+          <count>9</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>delay_queue,0x0A</ItemText>
+        </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>
@@ -249,6 +259,11 @@
           <count>4</count>
           <WinNumber>2</WinNumber>
           <ItemText>current_p</ItemText>
+        </Ww>
+        <Ww>
+          <count>5</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>current_time_stamp</ItemText>
         </Ww>
       </WatchWindow2>
       <Tracepoint>
@@ -381,7 +396,7 @@
       <GroupNumber>2</GroupNumber>
       <FileNumber>6</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\queue.c</PathWithFileName>

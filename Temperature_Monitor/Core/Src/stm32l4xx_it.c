@@ -45,6 +45,7 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 int volatile flag =0;
+long long current_time_stamp = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -218,28 +219,36 @@ void SysTick_Handler(void)
 //				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
 //			} 
 //	}
-	if(actual_temp_whole> threshold_temp_whole || (actual_temp_whole== threshold_temp_whole && actual_temp_decimal>threshold_temp_decimal)){
-			threshold_exceeded_flag=1;
-		}else{
-		threshold_exceeded_flag=0;
-	}
-    current_p = delay_queue->head_of_queue;
-
-    while(current_p!=NULL){
-        current_p->delay -= 1;
-        if(current_p->delay<=0){
-        	QueTask(current_p->f, current_p->priority);
-        	delay_queue->head_of_queue = current_p->next_task;
-					deleted = current_p;
+	current_time_stamp ++;
+//	current_time_stamp%=1000000000000000000;
+//	if(actual_temp_whole> threshold_temp_whole || (actual_temp_whole== threshold_temp_whole && actual_temp_decimal>threshold_temp_decimal)){
+//			threshold_exceeded_flag=1;
+//		}else{
+//		threshold_exceeded_flag=0;
+//	}
+//    current_p = delay_queue->head_of_queue;
+		if(current_time_stamp == delay_queue->head_of_queue->delay){
+					deleted = delay_queue->head_of_queue;
+					QueTask(delay_queue->head_of_queue->f, delay_queue->head_of_queue->priority);
+        	delay_queue->head_of_queue = delay_queue->head_of_queue->next_task;
 					//current_p = current_p->next_task;
-					current_p = delay_queue->head_of_queue;
 					free(deleted);
-					break;
-        }else{
-					current_p = current_p->next_task;
-				}
-        
-    }
+		}
+//    while(current_p!=NULL){
+//        current_p->delay -= 1;
+//        if(current_p->delay<=0){
+//        	QueTask(current_p->f, current_p->priority);
+//        	delay_queue->head_of_queue = current_p->next_task;
+//					deleted = current_p;
+//					//current_p = current_p->next_task;
+//					current_p = delay_queue->head_of_queue;
+//					free(deleted);
+//					break;
+//        }else{
+//					current_p = current_p->next_task;
+//				}
+//        
+//    }
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */

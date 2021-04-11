@@ -1,7 +1,7 @@
 Dependencies for Project 'Temperature_Monitor', Target 'Temperature_Monitor': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32l432xx.s)(0x60718712)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Temperature_Monitor-IC:\Users\Ismael\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ismael\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include--pd "__UVISION_VERSION SETA 533" --pd "_RTE_ SETA 1" --pd "STM32L432xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32l432xx.lst --xref -o temperature_monitor\startup_stm32l432xx.o --depend temperature_monitor\startup_stm32l432xx.d)
-F (../Core/Src/main.c)(0x60731D29)(-c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\Temperature_Monitor -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Temperature_Monitor-IC:\Users\Ismael\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ismael\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o temperature_monitor\main.o --omf_browse temperature_monitor\main.crf --depend temperature_monitor\main.d)
+F (../Core/Src/main.c)(0x60732406)(-c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\Temperature_Monitor -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Temperature_Monitor-IC:\Users\Ismael\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ismael\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o temperature_monitor\main.o --omf_browse temperature_monitor\main.crf --depend temperature_monitor\main.d)
 I (../Core/Inc/main.h)(0x6071870F)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x6050AC34)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6071870F)
@@ -34,13 +34,13 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x6050AC34)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x6050AC34)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x6050AC34)
 I (..\..\Temperature_Monitor\tasks.h)(0x6071DE13)
-I (..\..\Temperature_Monitor\queue.h)(0x6070104E)
+I (..\..\Temperature_Monitor\queue.h)(0x6073222A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E8312)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E8312)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E8312)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E8312)
 I (../Core/Inc/stm32l4xx_it.h)(0x6071870F)
-F (../Core/Src/stm32l4xx_it.c)(0x6073028C)(-c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\Temperature_Monitor -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Temperature_Monitor-IC:\Users\Ismael\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ismael\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o temperature_monitor\stm32l4xx_it.o --omf_browse temperature_monitor\stm32l4xx_it.crf --depend temperature_monitor\stm32l4xx_it.d)
+F (../Core/Src/stm32l4xx_it.c)(0x60732404)(-c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\Temperature_Monitor -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Temperature_Monitor-IC:\Users\Ismael\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ismael\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o temperature_monitor\stm32l4xx_it.o --omf_browse temperature_monitor\stm32l4xx_it.crf --depend temperature_monitor\stm32l4xx_it.d)
 I (../Core/Inc/main.h)(0x6071870F)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x6050AC34)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6071870F)
@@ -72,7 +72,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x6050AC34)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x6050AC34)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x6050AC34)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x6050AC34)
-I (..\..\Temperature_Monitor\queue.h)(0x6070104E)
+I (..\..\Temperature_Monitor\queue.h)(0x6073222A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E8312)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E8312)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E8312)
@@ -111,7 +111,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x6050AC34)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x6050AC34)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x6050AC34)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x6050AC34)
-F (..\tasks.c)(0x6072F978)(-c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\Temperature_Monitor -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Temperature_Monitor-IC:\Users\Ismael\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ismael\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o temperature_monitor\tasks.o --omf_browse temperature_monitor\tasks.crf --depend temperature_monitor\tasks.d)
+F (..\tasks.c)(0x60732406)(-c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\Temperature_Monitor -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Temperature_Monitor-IC:\Users\Ismael\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ismael\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o temperature_monitor\tasks.o --omf_browse temperature_monitor\tasks.crf --depend temperature_monitor\tasks.d)
 I (..\tasks.h)(0x6071DE13)
 I (../Core/Inc/main.h)(0x6071870F)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x6050AC34)
@@ -144,14 +144,14 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x6050AC34)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x6050AC34)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x6050AC34)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x6050AC34)
-I (..\queue.h)(0x6070104E)
+I (..\queue.h)(0x6073222A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E8312)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E8312)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E8312)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E8312)
 I (../Core/Inc/stm32l4xx_it.h)(0x6071870F)
-F (..\queue.c)(0x607301A1)(-c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\Temperature_Monitor -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Temperature_Monitor-IC:\Users\Ismael\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ismael\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o temperature_monitor\queue.o --omf_browse temperature_monitor\queue.crf --depend temperature_monitor\queue.d)
-I (..\queue.h)(0x6070104E)
+F (..\queue.c)(0x607327B6)(-c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\Temperature_Monitor -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Temperature_Monitor-IC:\Users\Ismael\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Ismael\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o temperature_monitor\queue.o --omf_browse temperature_monitor\queue.crf --depend temperature_monitor\queue.d)
+I (..\queue.h)(0x6073222A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E8312)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E8312)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E8312)
