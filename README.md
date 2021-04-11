@@ -1,6 +1,6 @@
 # Cooperative-Scheduler
 
-**Cooperative-Scheduler Data Structures**
+1-  **Cooperative-Scheduler Data Structures**
 -------------------------------------------
 #### struct task
 This struct is used to represent the *tasks* that will get scheduled using the scheduler.\ 
@@ -19,7 +19,7 @@ This struct only contain a pointer to the head of the queue of type *task*. Ther
 <br />
 
 
-**Cooperative-Scheduler main functions**
+2- **Cooperative-Scheduler main functions**
 -------------------------------------------
 #### void Dispatch() 
 This function is called in the main() function inside while (1) infinite loop. \
@@ -39,7 +39,7 @@ This function is used to enque tasks into the *delay queue* and they are sorted 
 <br />
 <br />
 
-**Application 1: Temperature Monitor**
+3- **Application 1: Temperature Monitor**
 -------------------------------------------
 ### Application Description
 The purpose of this application is to have a system that continously monitors the temperature every 30 seconds.\
@@ -69,7 +69,7 @@ Link to YouTube: https://drive.google.com/file/d/1yqYHBFoFnw5TClmqPVuCCKca3UBKhm
 <br />
 <br />
 
-**Application 2 : Parking Sensor**
+4- **Application 2 : Parking Sensor**
 -------------------------------------------
 
 ### Application Description
