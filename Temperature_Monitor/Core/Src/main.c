@@ -119,7 +119,7 @@ int main(void)
 	QueTask(task_1_read_temperature, 2);
 	QueTask(task_2_blink_leds, 7);
   /* USER CODE END 2 */
-   
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
